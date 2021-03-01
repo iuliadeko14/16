@@ -1,0 +1,220 @@
+body {
+    background-color: rgba(66, 66, 66, 1);
+    margin: 0;
+    padding-left: 50px;
+}
+.form-list {
+    padding-left: 20px;
+    width: 176px;
+    height: 309px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+label {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.checkbox{
+    display: none;
+}
+#check + span, #check1 + span, #check2 + span, #check3 + span, #check4 + span, #check5 + span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    border: 1px solid rgba(153, 153, 153, 1);
+    border-radius: 3px;
+}
+#check + span::before{
+    content: "\2713";
+    position: absolute;
+    top: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity .3 ease-in-out;
+
+}
+#check:checked + span::before {
+    height: 15px;
+    opacity: 1;
+    border: 1px solid rgba(204, 178, 110, 1);
+    color: rgba(204, 178, 110, 1);
+    border-radius: 3px;
+}
+#check1 + span::before, #check2 + span::before, #check3 + span::before, #check4 + span::before, #check5 + span::before{
+    content: "\2713";
+    position: absolute;
+    top: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity .3 ease-in-out;
+
+}
+#check1:checked + span::before, #check2:checked + span::before, #check3:checked + span::before,
+ #check4:checked + span::before, #check5:checked + span::before {
+    height: 15px;
+    opacity: 1;
+    border: 1px solid rgba(204, 178, 110, 1);
+    color: rgba(204, 178, 110, 1);
+    border-radius: 3px;
+}
+.choices {
+    width: 176px;
+    border-radius: 10px;
+}
+.choices .is-active {
+    position: absolute;
+    top: 30px;
+    width: 176px;
+    border-radius: 0 0 10px 10px;
+
+}
+.is-open .choices__inner  {
+    position: relative;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    border: 1px solid rgba(204, 178, 110, 1)!important;
+    border-radius: 10px!important;
+    z-index: 10;
+}
+.choices__list--single{
+    position: relative;
+    background-image: url(img/Rectangle\ 141.png);
+    background-repeat: no-repeat;
+}
+
+.is-open .choices__list--dropdown{
+    border: 1px solid rgba(204, 178, 110, 1)!important;
+}
+[class*='ground-pane'] {
+    filter: grayscale(1);
+}
+.choices[data-type*=select-one]:after {
+    display: none;
+
+}
+.customScroll {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px 30px 0 29px;
+    width: 399px;
+    max-height: 310px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 170%;
+    background-color: #fff;
+}
+.simplebar-scrollbar::before {
+    background-color: rgba(204, 178, 110, 1)!important;
+}
+.simplebar-scrollbar.simplebar-visible::before{
+    opacity: 1!important;
+}
+#validate-form {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    padding: 38px 30px 39px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+#validate-form label {
+    color:  #FF5C00;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+#validate-form input {
+    margin-bottom: 31px;
+    padding-left: 20px;
+    height: 60px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#validate-form button {
+    width: 50%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgba(255, 92, 0, 1);
+    border: none;
+    border-radius: 10px;
+}
+.tooltip {
+    margin-top: 50px;
+    padding: 20px 78px 20px 29px;
+    width: 375px;
+    font-size: 20px;
+    line-height: 170%;
+    background-color: #fff;;
+}
+.tooltip p {
+    display: inline-block;
+    width: 270px;
+    font-size: 18px;
+    line-height: 170%;
+}
+.tooltip-text{
+    position: relative;
+    display: inline-block;
+    
+}
+.marker {
+    width: 16px;
+    height: 16px;
+    background-image: url(img/Subtract\ \(1\).png);
+    cursor: pointer;
+}
+.popup {
+    position: absolute;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    left: -50%;
+    transform: translateX(-40%);
+    top: -55px;
+    width: 163px;
+    font-size: 12px;
+    background: rgb(77, 74, 74);
+    color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transition: opacity .3 ease-in-out;
+}
+
+.marker:hover {
+    background-image: url(img/Subtract.png);
+}
+.marker:hover + .popup,
+.marker:focus + .popup {
+    opacity: 1;
+}
+.popup::before{
+    content: " ";
+    position: absolute;
+    top: 45px;
+    left: 47%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14.28px 7.195px 0 7.195px;
+    border-color:  rgb(77, 74, 74) transparent transparent transparent;
+}

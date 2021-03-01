@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База знаний</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="choices.min.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+/>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+</head>
+<body>
+    <div class="form-list">
+        <form action="" class="list">
+            <h3>Категории:</h3>
+            <label for="check">
+                <input type="checkbox" name="check" id="check" class="checkbox">
+                Динозавры
+                <span></span>
+            </label>
+            <label for="check1">
+                <input type="checkbox" name="check" id="check1" class="checkbox">
+                Медведи
+                <span></span>
+            </label>
+            <label for="check2">
+                <input type="checkbox" name="check" id="check2" class="checkbox">
+                Косули
+                <span></span>
+            </label>
+            <label for="check3">
+                <input type="checkbox" name="check" id="check3" class="checkbox">
+                Лисы
+                <span></span>
+            </label>
+            <label for="check4">
+                <input type="checkbox" name="check" id="check4" class="checkbox">
+                Волки
+                <span></span>
+            </label>
+            <label for="check5">
+                <input type="checkbox" name="check" id="check5" class="checkbox">
+                Олени и лоси
+                <span></span>
+            </label>
+            
+        </form>
+    </div>
+    <select name="select" id="selectCustom">
+        <option value="">Материал</option>
+        <option value="">Древесина</option>
+        <option value="">Металл</option>
+        <option value="">Камень</option>
+        <option value="">Пластик</option>
+        <option value="">Композитный</option>
+        <option value="">Гипс</option>
+    </select>
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <div data-simplebar class="customScroll">
+        Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, 
+        а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+    </div>
+    <form action="" id="validate-form" class="form">
+        <label for="Имя">Как вас зовут?</label>
+        <input 
+        name="Имя"
+        type="text"
+        placeholder="Имя*"
+        data-validate-field="name">
+        <label for="tel">Укажите ваш телефон</label>
+        <input 
+        name="tel"
+        type="tel"
+        placeholder="Телефон*"
+        data-validate-rules="phone"
+        >
+        <label for="email">Укажите ваш e-mail</label>
+        <input
+        name="email" 
+        type="text"
+        placeholder="E-mail*"
+        data-validate-field="mail">
+        <button>Заказать</button>
+    </form>
+    <div class="tooltip">
+        <p>Следует отметить, что социально-экономическое развитие способствует повышению качества 
+            переосмысления внешнеэкономических политик.</p>
+            <div class="tooltip-text">
+                <div class="marker"></div>
+                <div class="popup">
+                  Глава 34 страница 345
+            </div> 
+            </div>
+        
+    </div>
+    <script src="choices.min.js"></script>
+    <script>
+         const element = document.querySelector('#selectCustom');
+
+         const choices = new Choices(element, {
+            searchEnabled: false,  
+            position: "bottom",
+         })
+    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+</script>
+<script type="text/javascript">
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+    function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [48.872197, 2.354224],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 16,
+        });
+        var myGeoObject = new ymaps.GeoObject({
+       geometry: {
+        type: "Point", // тип геометрии - точка
+        // coordinates: [55.8, 37.8] // координаты точки
+        }
+    });
+    var myPlacemark = new ymaps.Placemark([48.872197, 2.354224], {}, {
+    iconLayout: 'default#image',
+    iconImageHref: 'img/Subtract.svg',
+    iconImageSize: [30, 42],
+    iconImageOffset: [-3, -42]
+});
+// Размещение геообъекта на карте.
+      myMap.geoObjects.add(myGeoObject); 
+      myMap.geoObjects.add(myPlacemark);
+    }
+</script>
+<script src="just-validate.min.js"></script>
+<script src="inputmask.min.js"></script>
+<script>
+var selector = document.querySelector("input[type='tel']");
+
+var im = new Inputmask("+7 (999)-999-99-99");
+im.mask(selector);
+
+new JustValidate('.form', {
+    rules: {
+
+      name: {
+        required: true,
+        minLength: 2,
+        maxLength: 15,
+      },
+      tel: {
+          required: true,
+          function: (name, value) => {
+              const phone = selector.inputmask.unmaskedvalue()
+              console.log(phone)
+              return Number(phone) && phone.length === 10  
+          }
+      },
+        mail: {
+        required: true,
+        email: true
+      },
+    }
+})
+</script>
+
+</body>
+</html>
