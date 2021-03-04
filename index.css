@@ -74,9 +74,11 @@ label {
     color: rgba(204, 178, 110, 1);
     border-radius: 3px;
 }
+
 .choices {
     width: 176px;
     border-radius: 10px;
+    position: relative;
 }
 .choices .is-active {
     position: absolute;
@@ -94,10 +96,50 @@ label {
     z-index: 10;
 }
 .choices__list--single{
+    font-size: 14px;
+    margin-top: 5px!important;
+}
+/* .choices__list--single{
     position: relative;
     background-image: url(img/Rectangle\ 141.png);
     background-repeat: no-repeat;
-}
+} */
+/* .button-text{
+    pointer-events: none;
+  }
+  
+  .button-arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-image: url(img/Rectangle\ 141.png);
+    background-repeat: no-repeat;
+    /* border-right: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+    transform: rotate(45deg);
+    pointer-events: none; */
+  
+  .select-button {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 9px 15px;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 2;
+    outline: none;
+  }
+  
+  .select-button:active,
+  .select-button:focus {
+      outline: none;
+  }  
 
 .is-open .choices__list--dropdown{
     border: 1px solid rgba(204, 178, 110, 1)!important;
@@ -106,9 +148,19 @@ label {
     filter: grayscale(1);
 }
 .choices[data-type*=select-one]:after {
-    display: none;
+    content: url(img/Rectangle\ 141.png)!important;
+    right: 20px!important;
+    top: 35%!important;
+    border: none!important;
 
 }
+.choices[data-type*=select-one].is-open:after {
+    content: url(img/Rectangle\ 141.png)!important;
+    right: 20px!important;
+    top: 35%!important;
+    width: 30px!important;
+    height: 30px!important;
+ }
 .customScroll {
     margin-top: 50px;
     margin-bottom: 50px;
