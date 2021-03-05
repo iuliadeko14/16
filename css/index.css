@@ -89,7 +89,7 @@ label {
 }
 .is-open .choices__inner  {
     position: relative;
-    padding-left: 0px!important;
+    padding-left: 3px!important;
     padding-right: 0px!important;
     border: 1px solid rgba(204, 178, 110, 1)!important;
     border-radius: 10px!important;
@@ -99,25 +99,6 @@ label {
     font-size: 14px;
     margin-top: 5px!important;
 }
-/* .choices__list--single{
-    position: relative;
-    background-image: url(img/Rectangle\ 141.png);
-    background-repeat: no-repeat;
-} */
-/* .button-text{
-    pointer-events: none;
-  }
-  
-  .button-arrow {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-image: url(img/Rectangle\ 141.png);
-    background-repeat: no-repeat;
-    /* border-right: 1px solid #666666;
-    border-bottom: 1px solid #666666;
-    transform: rotate(45deg);
-    pointer-events: none; */
   
   .select-button {
     position: relative;
@@ -148,18 +129,19 @@ label {
     filter: grayscale(1);
 }
 .choices[data-type*=select-one]:after {
-    content: url(img/Rectangle\ 141.png)!important;
+    content: url(../img/Rectangle\ 141.png)!important;
     right: 20px!important;
     top: 35%!important;
     border: none!important;
 
 }
 .choices[data-type*=select-one].is-open:after {
-    content: url(img/Rectangle\ 141.png)!important;
-    right: 20px!important;
+    content: url(../img/Rectangle\ 141.svg)!important;
+    right: 10px!important;
     top: 35%!important;
-    width: 30px!important;
-    height: 30px!important;
+    width: 10px!important;
+    height: 10px!important;
+    z-index: 10;
  }
 .customScroll {
     margin-top: 50px;
@@ -233,7 +215,7 @@ label {
 .marker {
     width: 16px;
     height: 16px;
-    background-image: url(img/Subtract\ \(1\).png);
+    background-image: url(../img/Subtract\ \(1\).png);
     cursor: pointer;
 }
 .popup {
@@ -252,7 +234,7 @@ label {
 }
 
 .marker:hover {
-    background-image: url(img/Subtract.png);
+    background-image: url(../img/Subtract.png);
 }
 .marker:hover + .popup,
 .marker:focus + .popup {
