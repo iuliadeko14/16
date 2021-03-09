@@ -64,28 +64,17 @@
         Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, 
         а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
     </div>
-    <form action="" id="validate-form" method="GET" class="form">
-        <label for="Имя">Как вас зовут?</label>
-        <input 
-        name="Имя"
-        type="text"
-        placeholder="Имя*"
-        data-validate-field="name">
-        <label for="tel">Укажите ваш телефон</label>
-        <input 
-        name="tel"
-        type="tel"
-        placeholder="Телефон*"
-        data-validate-field="phone"
-        >
-        <label for="email">Укажите ваш e-mail</label>
-        <input
-        name="email" 
-        type="text"
-        placeholder="E-mail*"
-        data-validate-field="mail">
-        <button>Заказать</button>
-    </form>
+    <div class="custom-form">
+        <form action="" class="form" id="validate-form">
+          <label for="name">Введите имя</label>
+          <input type="text" id="name" placeholder="Имя*" data-validate-field="name">
+          <label for="phone">Укажите ваш телефон</label>
+          <input type="tel" id="phone" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone">
+          <label for="mail">Укажите ваш e-mail</label>
+          <input type="email" id="mail" placeholder="E-mail*" data-validate-field="mail">
+          <button class="button__submit" type="submit">Заказать</button>
+        </form>
+      </div>
     <div class="tooltip">
         <p>Следует отметить, что социально-экономическое развитие способствует повышению качества 
             переосмысления внешнеэкономических политик.</p>
@@ -150,26 +139,24 @@ var im = new Inputmask("+7 (999)-999-99-99");
 im.mask(selector);
 
 new JustValidate('.form', {
-    rules: {
-
-      name: {
-        required: true,
-        minLength: 2,
-        maxLength: 15,
-      },
-      tel: {
-          required: true,
-          function: (name, value) => {
-              const phone = selector.inputmask.unmaskedvalue()
-              console.log(phone)
-              return Number(phone) && phone.length === 10  
-          }
-      },
-        mail: {
-        required: true,
-        email: true
-      },
-    }
+  rules: {
+    name: {
+      required: true,
+      minLength: 2,
+      maxLength: 10
+    },
+    tel: {
+      required: true,
+      function: (name, value) => {
+        const phone = selector.inputmask.unmaskedvalue()
+        return Number(phone) && phone.length === 10
+      }
+    },
+    mail: {
+      required: true,
+      email: true
+    },
+  }
 })
 </script>
 
